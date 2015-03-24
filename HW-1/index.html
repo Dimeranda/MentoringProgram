@@ -5,11 +5,11 @@
 
 </head>
 <body>
-<button  onclick="addName()" id="b1"> add </button>
-<button   onclick="addGadgest()" id="b2"> add gadgest </button>
-<button   onclick="ShowList()" id="b3"> show </button>
+<button id="b1"> add </button>
+<button  id="b2"> add gadgest </button>
+<button  id="b3"> show </button>
 <script>
-
+    window.onload = function() {
 
         var base = {
             Kostya: [ 'watch', 'ipad', 'iphone'],
@@ -41,11 +41,14 @@
             }
 
         }
+        document.getElementById('b1').addEventListener( "click", addName);
+        document.getElementById('b2').addEventListener( "click", addGadgest);
+        document.getElementById('b3').addEventListener( "click", ShowList);
 
 
+    }
 
 </script>
-
 
 </body>
 </html>
