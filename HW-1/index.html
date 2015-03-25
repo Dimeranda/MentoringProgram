@@ -19,19 +19,29 @@
 
         function addName() {
             var keybase = prompt('enter name');
-            var valuebase = prompt('enter gadgest');
-            base[keybase] = [];
-            base[keybase].push(valuebase);
-            console.log(base);
+            if (base[keybase]){
+                alert('this name already exists');
+            }
+            else {
+                var valuebase = prompt('enter gadgest');
+                base[keybase] = [];
+                base[keybase].push(valuebase);
+                console.log(base);
+            }
 
         }
 
         function addGadgest() {
             var name = prompt('enter name');
-            var gadgest = prompt('enter gadgest');
+            if(!base[name]){
+                alert("user is not in list yet");
+            }
+            else {
+                var gadgest = prompt('enter gadgest');
 
-            base[name].push(gadgest);
-            console.log(base);
+                base[name].push(gadgest);
+                console.log(base);
+            }
         }
 
         function ShowList() {
