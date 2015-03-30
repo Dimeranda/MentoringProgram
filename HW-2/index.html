@@ -2,12 +2,68 @@
 <html>
 <head>
     <title></title>
-
+    <style>
+        .block{
+            border: 3px solid dodgerblue;
+            border-top: none;
+        }
+        .block:first-child{
+            border-top: 3px solid dodgerblue;
+        }
+        .notification{
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<button  id="b1"> add </button>
-<button  id="b2"> add gadgest </button>
-<button  id="b3"> show </button>
+<div class="block" >
+    <p>Add User</p>
+    <label for="addName1"> enter name</label>
+    <input  id="addName1" type="text" size="40">
+    <label for="addGadgest1"> enter gadgest</label>
+    <input  id="addGadgest1" type="text" size="40">
+
+    <p class="notification" id="notification1">this name already exists</p>
+
+    <button  id="b1"> add </button>
+
+</div>
+
+<div  class="block">
+    <p>Add gadgest</p>
+    <label for="addName2"> enter name</label>
+    <input  id="addName2" type="text" size="40">
+    <label for="addGadgest2"> enter gadgest</label>
+    <input  id="addGadgest2" type="text" size="40">
+
+    <p class="notification" id="notification2">user is not in list yet</p>
+
+    <button  id="b2"> add gadgest </button>
+</div>
+
+<div class="block">
+    <p>Delete Gadgest</p>
+    <label for="addName3"> enter name</label>
+    <input  id="addName3" type="text" size="40">
+    <label for="addGadgest3"> enter gadgest</label>
+    <input  id="addGadgest3" type="text" size="40">
+
+    <p class="notification" id="notification3">user is not in list yet</p>
+
+
+    <button  id="b4"> delete Gadgest </button>
+</div>
+
+
+<div class="block">
+    <p>Show User</p>
+    <button  id="b3"> show </button>
+</div>
+
+
+
+
 <script>
     window.onload = function() {
 
@@ -18,29 +74,41 @@
         };
 
         function addName() {
-            var keybase = prompt('enter name');
+            var keybase = document.getElementById('addName1').value;
+            var warning = document.getElementById('notification1');
+            warning.style.display='none';
             if (base[keybase]){
-                alert('this name already exists');
+                warning.style.display='block';
             }
             else {
-                var valuebase = prompt('enter gadgest');
+                var valuebase = document.getElementById('addGadgest1').value;
                 base[keybase] = [];
                 base[keybase].push(valuebase);
-                console.log(base);
+
             }
 
         }
 
         function addGadgest() {
-            var name = prompt('enter name');
+            var name = document.getElementById('addName2').value;
+            var warning = document.getElementById('notification2');
             if(!base[name]){
-                alert("user is not in list yet");
+                warning.style.display='block';
             }
             else {
-                var gadgest = prompt('enter gadgest');
-
+                var gadgest =  document.getElementById('addGadgest2').value;
                 base[name].push(gadgest);
-                console.log(base);
+            }
+        }
+        function deleteGadgest() {
+            var name = document.getElementById('addName2').value;
+            var warning = document.getElementById('notification2');
+            if(!base[name]){
+                warning.style.display='block';
+            }
+            else {
+                var gadgest =  document.getElementById('addGadgest2').value;
+                base[name].pop(gadgest);
             }
         }
 
@@ -54,6 +122,7 @@
         document.getElementById('b1').addEventListener( "click", addName);
         document.getElementById('b2').addEventListener( "click", addGadgest);
         document.getElementById('b3').addEventListener( "click", ShowList);
+        document.getElementById('b4').addEventListener( "click", deleteGadgest);
 
 
     }
