@@ -2,52 +2,8 @@
 <html>
 <head>
     <title></title>
-    <style>
-        .block{
-            width: 500px;
-            height: 145px;
-            border: 2px solid dodgerblue;
-            border-top: none;
-            padding: 15px 50px 0 0;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .block:first-child{
-            border-top: 2px solid dodgerblue;
-        }
-        .block p{
-            margin: 0;
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-        }
-        .block button{
-            float:right;
-            width: 105px;
-        }
-        .notification{
-            color: red;
-            display: none;
-            position: absolute;
-            left: 140px;
-        }
-        .formBlock{
-            margin: 10px 0;
-            text-align: end;
-        }
-
-        .formBlock label{
-            margin-left: 15px;
-
-        }
-        .formBlock input{
-            margin-left: 15px;
-        }
-
-        .content{
-            text-align: left;
-            padding: 15px 0 0 23px;
-            position: absolute;
-        }
-    </style>
 </head>
 <body>
 <div class="block" >
@@ -107,105 +63,7 @@
     <button  id="b3"> show </button>
 </div>
 
-
-
-
-<script>
-    window.onload = function() {
-
-        var base = {
-            Kostya: [ 'watch', 'ipad', 'iphone'],
-            Pasha: [ 'watch', 'tablet'],
-            Dasha: ['iphone']
-        };
-
-        function addName() {
-            var keybase = document.getElementById('addName1').value;
-            var warning = document.getElementById('notification1');
-            warning.style.display='none';
-            if (base[keybase]){
-                warning.style.display='block';
-            }
-            else {
-                var valuebase = document.getElementById('addGadgest1').value;
-                var basearray = valuebase.split(',');
-                console.log(basearray);
-                base[keybase] = basearray;
-
-
-            }
-            alert(base[Pasha])
-
-        }
-
-        function addGadgest() {
-            var name = document.getElementById('addName2').value;
-            var warning = document.getElementById('notification2');
-            if(!base[name]){
-                warning.style.display='inline-block';
-            }
-            else {
-                var gadgest =  document.getElementById('addGadgest2').value;
-
-                base[name].push(gadgest);
-
-            }
-
-
-
-        }
-        function deleteGadgest() {
-            var name = document.getElementById('addName3').value;
-            var warning = document.getElementById('notification3');
-            var warningDelete = document.getElementById('notification4');
-            var gadgest =  document.getElementById('addGadgest3').value;
-            var gadgestArray = gadgest.split(',');
-            var nameArray = base[name];
-            if(!base[name]){
-                warning.style.display='block';
-                console.log('3')
-            }
-            else {
-
-                for(var i= 0, l=gadgestArray.length; i<l; i++){
-                    for(var j= 0, len=nameArray.length; j<len; j++){
-                        if(gadgestArray[i]=nameArray[j]){
-                            gadgestArray.splice(i,1);
-                            console.log(gadgestArray)
-                        }
-                        else{
-                            warningDelete.style.display='inline-block';
-                            console.log('2')
-                        }
-                    }
-                }
-
-
-            }
-            document.getElementById('b4').addEventListener( "click", ShowList);
-        }
-
-        function ShowList() {
-            var content = document.getElementById('content');
-            for (var i in base) {
-                if (!base.hasOwnProperty(i)) continue;
-                var str = '';
-                for (var j in base) str += (j + ': ' + base[j] + '; '+'<br>');
-                content.innerHTML=str;
-                console.log(base);
-            }
-
-        }
-
-        document.getElementById('b1').addEventListener( "click", addName);
-        document.getElementById('b2').addEventListener( "click", addGadgest);
-        document.getElementById('b3').addEventListener( "click", ShowList);
-        document.getElementById('b4').addEventListener( "click", deleteGadgest);
-
-
-    }
-
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
