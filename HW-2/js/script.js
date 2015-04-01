@@ -5,7 +5,9 @@ window.onload = function() {
         Pasha: [ 'watch', 'tablet'],
         Dasha: ['iphone']
     };
-
+    /**
+     * Add method in object base.
+     */
     function addName() {
         var keybase = document.getElementById('addName1').value;
         var warning = document.getElementById('notification1');
@@ -19,6 +21,9 @@ window.onload = function() {
             base[keybase] = basearray;
         }
     }
+    /**
+     *  Add value for key in object base.
+     */
     function addGadgest() {
         var name = document.getElementById('addName2').value;
         var warning = document.getElementById('notification2');
@@ -30,6 +35,9 @@ window.onload = function() {
             base[name].push(gadgest);
         }
     }
+    /**
+     * Delete value for key in object base.
+     */
     function deleteGadgest() {
         var name = document.getElementById('addName3').value;
         var warning = document.getElementById('notification3');
@@ -57,7 +65,9 @@ window.onload = function() {
 
         }
     }
-
+    /**
+     * Show object base.
+     */
     function ShowList() {
         var content = document.getElementById('content');
         for (var i in base) {
@@ -65,7 +75,6 @@ window.onload = function() {
             var str = '';
             for (var j in base) str += (j + ': ' + base[j] + '; '+'<br>');
             content.innerHTML=str;
-            console.log(base);
         }
     }
 
