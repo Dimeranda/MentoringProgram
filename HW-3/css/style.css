@@ -1,0 +1,44 @@
+.block{
+    width: 500px;
+    height: 145px;
+    border: 2px solid dodgerblue;
+    border-top: none;
+    padding: 15px 50px 0 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.block:first-child{
+    border-top: 2px solid dodgerblue;
+}
+.block p{
+    margin: 0;
+
+}
+.block button{
+    float:right;
+    width: 105px;
+}
+.notification{
+    color: red;
+    display: none;
+    position: absolute;
+    left: 140px;
+}
+.formBlock{
+    margin: 10px 0;
+    text-align: end;
+}
+
+.formBlock label{
+    margin-left: 15px;
+
+}
+.formBlock input{
+    margin-left: 15px;
+}
+
+.content{
+    text-align: left;
+    padding: 15px 0 0 23px;
+    position: absolute;
+}
