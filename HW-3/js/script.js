@@ -1,22 +1,22 @@
 window.onload = function() {
 
     var base = {
-        Kostya: [ 'watch', 'ipad', 'iphone'],
-        Pasha: [ 'watch', 'tablet'],
-        Dasha: ['iphone']
+        kostya: [ 'watch', 'ipad', 'iphone'],
+        pasha: [ 'watch', 'tablet'],
+        dasha: ['iphone']
     };
     /**
      * Add method in object base.
      */
     function addName() {
-        var keybase = document.getElementById('addName1').value;
+        var keybase = document.getElementById('addName1').value.toLowerCase().trim();
         var warning = document.getElementById('notification1');
         warning.style.display='none';
         if (base[keybase]){
             warning.style.display='block';
         }
         else {
-            var valuebase = document.getElementById('addGadgest1').value;
+            var valuebase = document.getElementById('addGadgest1').value.toLowerCase().trim();
             var basearray = valuebase.split(',');
             base[keybase] = basearray;
         }
@@ -25,13 +25,13 @@ window.onload = function() {
      *  Add value for key in object base.
      */
     function addGadgest() {
-        var name = document.getElementById('addName2').value;
+        var name = document.getElementById('addName2').value.toLowerCase().trim();
         var warning = document.getElementById('notification2');
         if(!base[name]){
             warning.style.display='inline-block';
         }
         else {
-            var gadgest =  document.getElementById('addGadgest2').value;
+            var gadgest =  document.getElementById('addGadgest2').value.toLowerCase().trim();
             base[name].push(gadgest);
         }
     }
@@ -39,26 +39,31 @@ window.onload = function() {
      * Delete value for key in object base.
      */
     function deleteGadgest() {
-        var name = document.getElementById('addName3').value;
+        var name = document.getElementById('addName3').value.toLowerCase().trim();
         var warning = document.getElementById('notification3');
         var warningDelete = document.getElementById('notification4');
-        var gadgest =  document.getElementById('addGadgest3').value;
+        var gadgest =  document.getElementById('addGadgest3').value.toLowerCase().trim();
         var gadgestArray = gadgest.split(',');
+        console.log(gadgestArray);
         var nameArray = base[name];
+        console.log(nameArray);
 
         if(!base[name]){
             warning.style.display='block';
+            return false;
         }
         else {
 
             for(var i= 0, l=nameArray.length; i<l; i++){
-                if(nameArray.indexOf(gadgestArray[i])!=-1){
+                console.log(i);
+                if(gadgestArray.indexOf(nameArray[i])!=-1){
                     nameArray.splice(i,1);
+                    console.log(i);
                 }
 
             }
-
-        }warningDelete.style.display='inline-block';
+            warningDelete.style.display='inline-block';
+        }
     }
     /**
      * Show object base.
@@ -70,6 +75,17 @@ window.onload = function() {
             var str = '';
             for (var j in base) str += (j + ': ' + base[j] + '; '+'<br>');
             content.innerHTML=str;
+        }
+    }
+
+    function increment(){
+        var counter =0;
+        return function(){
+            if(gadgestArray.indexOf(nameArray[i])!=-1){
+                nameArray.splice(i,1);
+                console.log(i);
+            }
+
         }
     }
 
