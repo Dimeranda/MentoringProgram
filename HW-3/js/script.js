@@ -5,9 +5,46 @@ window.onload = function() {
         pasha: [ 'watch', 'tablet'],
         dasha: ['iphone']
     };
+
+    var arr = [];
+     for(var prop in base ) {
+        for(var i = 0; i < base[prop].length; i++) {
+                arr.push(base[prop][i]);
+        }
+    }
+    var numberGadgets = arr.length;
+
+    function counterGadgets(lengthEnterGadget, numberAtAddUser){
+        var a=lengthEnterGadget, b=numberAtAddUser;
+
+        var counter=numberGadgets;
+        return gadgest = {
+            counterNumber: function(){
+                var number = counter + lengthEnterGadget+numberAtAddUser;
+
+                console.log(a,b);
+            },
+            printNumber: function(){
+                console.log(counter);
+                return counter
+            }
+        }
+
+    }
+    var gadget = counterGadgets();
+
+    console.log(arr);
+
     /**
      * Add method in object base.
      */
+
+
+
+    /**
+     * Add method in object base.
+     */
+
     function addName() {
         var keybase = document.getElementById('addName1').value.toLowerCase().trim();
         var warning = document.getElementById('notification1');
@@ -19,6 +56,12 @@ window.onload = function() {
             var valuebase = document.getElementById('addGadgest1').value.toLowerCase().trim();
             var basearray = valuebase.split(',');
             base[keybase] = basearray;
+
+            console.log(basearray);
+            var numberAtAddUser = basearray.length;
+            console.log(numberAtAddUser);
+            return numberAtAddUser;
+
         }
     }
     /**
@@ -32,7 +75,15 @@ window.onload = function() {
         }
         else {
             var gadgest =  document.getElementById('addGadgest2').value.toLowerCase().trim();
+
+            var lengthEnterGadget=base[name].length();
             base[name].push(gadgest);
+            console.log(lengthEnterGadget);
+            return lengthEnterGadget;
+
+
+            base[name].push(gadgest);
+
         }
     }
     /**
@@ -90,6 +141,9 @@ window.onload = function() {
     }
 
     document.getElementById('b1').addEventListener( "click", addName);
+
+    document.getElementById('b1').addEventListener( "click", gadgest.counterNumber);
+
     document.getElementById('b2').addEventListener( "click", addGadgest);
     document.getElementById('b3').addEventListener( "click", ShowList);
     document.getElementById('b4').addEventListener( "click", deleteGadgest);
