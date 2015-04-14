@@ -14,15 +14,13 @@ window.onload = function() {
     }
     var numberGadgets = arr.length;
 
-    function counterGadgets(lengthEnterGadget, numberAtAddUser){
-        var a=lengthEnterGadget, b=numberAtAddUser;
-
+    function counterGadgets(numberAtAddUser){
         var counter=numberGadgets;
         return gadgest = {
             counterNumber: function(){
-                var number = counter + lengthEnterGadget+numberAtAddUser;
+                var number = counter +numberAtAddUser;
 
-                console.log(a,b);
+                console.log(numberAtAddUser);
             },
             printNumber: function(){
                 console.log(counter);
@@ -40,12 +38,8 @@ window.onload = function() {
      */
 
 
-
-    /**
-     * Add method in object base.
-     */
-
     function addName() {
+        var numberAtAddUser;
         var keybase = document.getElementById('addName1').value.toLowerCase().trim();
         var warning = document.getElementById('notification1');
         warning.style.display='none';
@@ -56,13 +50,12 @@ window.onload = function() {
             var valuebase = document.getElementById('addGadgest1').value.toLowerCase().trim();
             var basearray = valuebase.split(',');
             base[keybase] = basearray;
-
-            console.log(basearray);
-            var numberAtAddUser = basearray.length;
-            console.log(numberAtAddUser);
-            return numberAtAddUser;
+            numberAtAddUser = basearray.length;
+            /*return numberAtAddUser;*/
 
         }
+        console.log(numberAtAddUser);
+        gadget.counterNumber(numberAtAddUser);
     }
     /**
      *  Add value for key in object base.
@@ -76,15 +69,13 @@ window.onload = function() {
         else {
             var gadgest =  document.getElementById('addGadgest2').value.toLowerCase().trim();
 
-            var lengthEnterGadget=base[name].length();
+            var lengthEnterGadget=base[name].length;
             base[name].push(gadgest);
-            console.log(lengthEnterGadget);
-            return lengthEnterGadget;
-
-
             base[name].push(gadgest);
-
+            return lengthEnterGadget;          
         }
+
+        gadgest.counterNumber(lengthEnterGadget);
     }
     /**
      * Delete value for key in object base.
@@ -141,9 +132,6 @@ window.onload = function() {
     }
 
     document.getElementById('b1').addEventListener( "click", addName);
-
-    document.getElementById('b1').addEventListener( "click", gadgest.counterNumber);
-
     document.getElementById('b2').addEventListener( "click", addGadgest);
     document.getElementById('b3').addEventListener( "click", ShowList);
     document.getElementById('b4').addEventListener( "click", deleteGadgest);
