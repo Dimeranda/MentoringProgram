@@ -7,6 +7,7 @@ window.onload = function() {
     };
 
     var notification = {
+
         warring: 'This name already exists',
         error: 'User is not in list yet' ,
         empty: 'Gadgest is not in list yet'
@@ -22,12 +23,15 @@ window.onload = function() {
 
     function counterGadgets(numberAtAddUser, lengthEnterGadget){
         var counter=numberGadgets;
+        var number;
         return gadgest = {
             counterNumber: function(){
-                var number = counter +numberAtAddUser + lengthEnterGadget;
+                number = counter +numberAtAddUser + lengthEnterGadget;
+                return number;
             },
             printNumber: function(){
-                return counter
+                console.log(number);
+                return counter;
             }
         }
 
