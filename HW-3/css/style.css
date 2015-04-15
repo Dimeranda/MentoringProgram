@@ -14,16 +14,16 @@
     margin: 0;
 
 }
+.block div{
+    color: red;
+    margin-left: 159px;
+    text-align: left;
+}
 .block button{
     float:right;
     width: 105px;
 }
-.notification{
-    color: red;
-    display: none;
-    position: absolute;
-    left: 140px;
-}
+
 .formBlock{
     margin: 10px 0;
     text-align: end;
