@@ -42,3 +42,9 @@
     padding: 15px 0 0 23px;
     position: absolute;
 } 
+
+.show div{
+
+    margin-left: 0;
+    color: black;
+}
