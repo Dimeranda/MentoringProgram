@@ -6,6 +6,12 @@ window.onload = function() {
         dasha: ['iphone']
     };
 
+    var notification = {
+        warring: 'This name already exists',
+        error: 'User is not in list yet' ,
+        empty: 'Gadgest is not in list yet'
+    };
+
     var arr = [];
      for(var prop in base ) {
         for(var i = 0; i < base[prop].length; i++) {
@@ -14,24 +20,19 @@ window.onload = function() {
     }
     var numberGadgets = arr.length;
 
-    function counterGadgets(numberAtAddUser){
+    function counterGadgets(numberAtAddUser, lengthEnterGadget){
         var counter=numberGadgets;
         return gadgest = {
             counterNumber: function(){
-                var number = counter +numberAtAddUser;
-
-                console.log(numberAtAddUser);
+                var number = counter +numberAtAddUser + lengthEnterGadget;
             },
             printNumber: function(){
-                console.log(counter);
                 return counter
             }
         }
 
     }
     var gadget = counterGadgets();
-
-    console.log(arr);
 
     /**
      * Add method in object base.
@@ -40,21 +41,20 @@ window.onload = function() {
 
     function addName() {
         var numberAtAddUser;
+        var block1= document.getElementById('block1');
         var keybase = document.getElementById('addName1').value.toLowerCase().trim();
-        var warning = document.getElementById('notification1');
-        warning.style.display='none';
         if (base[keybase]){
-            warning.style.display='block';
+            var div = document.createElement('div');
+            block1.appendChild(div);
+            div.innerHTML=notification.warring;
         }
         else {
             var valuebase = document.getElementById('addGadgest1').value.toLowerCase().trim();
             var basearray = valuebase.split(',');
             base[keybase] = basearray;
             numberAtAddUser = basearray.length;
-            /*return numberAtAddUser;*/
-
+            return numberAtAddUser;
         }
-        console.log(numberAtAddUser);
         gadget.counterNumber(numberAtAddUser);
     }
     /**
@@ -62,9 +62,11 @@ window.onload = function() {
      */
     function addGadgest() {
         var name = document.getElementById('addName2').value.toLowerCase().trim();
-        var warning = document.getElementById('notification2');
+        var block2= document.getElementById('block2');
         if(!base[name]){
-            warning.style.display='inline-block';
+            var div = document.createElement('div');
+            block2.appendChild(div);
+            div.innerHTML=notification.error;
         }
         else {
             var gadgest =  document.getElementById('addGadgest2').value.toLowerCase().trim();
@@ -82,29 +84,28 @@ window.onload = function() {
      */
     function deleteGadgest() {
         var name = document.getElementById('addName3').value.toLowerCase().trim();
-        var warning = document.getElementById('notification3');
-        var warningDelete = document.getElementById('notification4');
+        var block3= document.getElementById('block3');
         var gadgest =  document.getElementById('addGadgest3').value.toLowerCase().trim();
         var gadgestArray = gadgest.split(',');
-        console.log(gadgestArray);
         var nameArray = base[name];
-        console.log(nameArray);
 
         if(!base[name]){
-            warning.style.display='block';
+            var div = document.createElement('div');
+            block3.appendChild(div);
+            div.innerHTML=notification.error;
             return false;
         }
         else {
 
             for(var i= 0, l=nameArray.length; i<l; i++){
-                console.log(i);
                 if(gadgestArray.indexOf(nameArray[i])!=-1){
                     nameArray.splice(i,1);
-                    console.log(i);
                 }
 
             }
-            warningDelete.style.display='inline-block';
+            var div = document.createElement('div');
+            block3.appendChild(div);
+            div.innerHTML=notification.empty;
         }
     }
     /**
@@ -120,16 +121,6 @@ window.onload = function() {
         }
     }
 
-    function increment(){
-        var counter =0;
-        return function(){
-            if(gadgestArray.indexOf(nameArray[i])!=-1){
-                nameArray.splice(i,1);
-                console.log(i);
-            }
-
-        }
-    }
 
     document.getElementById('b1').addEventListener( "click", addName);
     document.getElementById('b2').addEventListener( "click", addGadgest);
