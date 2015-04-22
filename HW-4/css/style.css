@@ -1,0 +1,91 @@
+.block{
+    width: 530px;
+    min-height: 145px;
+    border: 2px solid dodgerblue;
+    border-top: none;
+    padding: 15px 50px 0 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.block:first-child{
+    border-top: 2px solid dodgerblue;
+}
+.block p{
+    margin: 0;
+
+}
+.block button{
+    float:right;
+    width: 105px;
+}
+.notification{
+    color: red;
+    display: none;
+    position: absolute;
+    left: 140px;
+}
+.formBlock{
+    margin: 10px 0;
+    text-align: end;
+}
+
+.formBlock label{
+    margin-left: 15px;
+
+}
+.formBlock input{
+    margin-left: 15px;
+}
+
+.content{
+    text-align: left;
+    padding: 15px 0 0 23px;
+    position: absolute;
+}
+
+
+/*------------------------------------*/
+.block label{
+    color : #e95200;
+    font-weight: bold;
+    font-size: 16px;
+}
+.block button{
+    background: #ff7d36;
+    color: #fff;
+    border: 2px solid #ffcda1;
+    border-radius: 6px;
+    height: 23px;
+    cursor: pointer;
+}
+.show{
+    position: relative;
+}
+.block.show div{
+    margin-left: 0;
+}
+.show p{
+    color: #e95200;
+    font-weight: bold;
+    font-size: 16px;
+    margin: -2px 0 0 -2px;
+    width: 100px;
+    padding: 4px 0 2px 30px;
+    border: 2px solid dodgerblue;
+    border-radius: 3px;
+    text-align: left;
+
+}
+.block.show{
+    padding: 0;
+}
+.show button{
+     position: absolute;
+     bottom: 10px;
+     right: 50px;
+ }
+
+.block div{
+    text-align: left;
+    margin-left: 100px;
+ }
