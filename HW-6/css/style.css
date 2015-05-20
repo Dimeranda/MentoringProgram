@@ -1,0 +1,29 @@
+.seachForm{
+    display: block;
+    width: 350px;
+    padding-left: 10px;
+}
+.prompt{
+    display: block;
+    width: 350px;
+    font-size: 14px;
+    margin-top: -1px;
+
+}
+
+.list{
+
+    width: 354px;
+    box-sizing: border-box;
+    border: 1px solid #a9a9a9;
+    border-top: none;
+    margin: 0;
+    padding:0 0 0 10px;
+    font-size: 16px;
+    list-style: none;
+}
+
+
+.list li{
+    padding: 3px 0;
+}
