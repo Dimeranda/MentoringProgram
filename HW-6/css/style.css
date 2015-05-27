@@ -1,29 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: Myriad_Pro;
+    src: url(../fonts/MyriadPro-BoldCond.otf);
+}
+
+body{
+    margin: 0 auto;
+    max-width: 1800px;
+    min-height: 1000px;
+    background: url(../img/ui-bg_gloss-wave.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.wrap{
+    position: relative;
+    margin: 0 auto;
+    padding: 35px 30px 0 33px;
+    width: 100%;
+    min-width: 1280px;
+    height: 500px;
+    box-sizing: border-box;
+    background: url(../img/bg-top.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+
+
+}
+
+.labelForSearch {
+    font-family: Myriad_Pro;
+    font-size: 24px;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #fff;
+}
+
+.gradient {
+    background: linear-gradient(#4D781B, #567405);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 .seachForm{
     display: block;
-    width: 350px;
+    margin-top: 5px;
     padding-left: 10px;
+    width: 350px;
+    height: 18px;
+    font-size: 14px;
+
 }
 .prompt{
-    display: block;
-    width: 350px;
+    display: none;
+    width: 363px;
+    max-height: 240px;
+    min-height: 25px;
+    padding: 10px;
+    box-sizing: border-box;
     font-size: 14px;
     margin-top: -1px;
-
-}
-
-.list{
-
-    width: 354px;
-    box-sizing: border-box;
-    border: 1px solid #a9a9a9;
-    border-top: none;
-    margin: 0;
-    padding:0 0 0 10px;
-    font-size: 16px;
+    position: absolute;
+    top: 92px;
+    left: 34px;
+    background: #fff;
+    border: 1px solid #ccc;
     list-style: none;
 }
 
+.feedback{
+    position: absolute;
+    top: 320px;
+    left: 570px;
+    box-sizing: border-box;
 
-.list li{
-    padding: 3px 0;
 }
+
+.feedback span{
+    display: block;
+    background: linear-gradient(#F7E500, #D45300);
+    font-size: 48px;
+    font-family: Myriad_Pro;
+    text-align: center;
+    -webkit-text-stroke-width: 1.3px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+.countries{
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.footer{
+    background: url(../img/bg-bottom.jpg);
+    height: 600px;
+    width: 100%;
+}
+

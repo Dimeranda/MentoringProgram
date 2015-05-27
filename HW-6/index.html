@@ -7,17 +7,28 @@
 </head>
 <body>
 
-<form onSubmit="return false">
-    <label for="seach" id="asd">Enter Country</label>
-    <input id="seach" class="seachForm" type="text">
-</form>
+
+<div class="wrap">
+
+    <label for="search" id="asd" class="gradient labelForSearch">Enter Country</label>
+    <input id="search" class="seachForm" type="text">
 
 
-<div id="autocomplete" class="prompt">
-    <ul id='list' class="list">
+    <img src="img/countries.png" class="countries">
+    <ul id="autocomplete" class="prompt">
 
     </ul>
+
+    <div class="feedback">
+        <p class="text">
+            <img src='img/logo.png'>
+            <span ></span>
+        </p>
+
+    </div>
 </div>
+<footer class="footer"></footer>
 <script src="js/script.js"></script>
+
 </body>
 </html>
